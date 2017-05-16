@@ -8,20 +8,9 @@
     "npm": "^3.0.0"
   },
   "scripts": {
-    "lint": "eslint bin build config server src tests",
-    "lint:fix": "npm run lint -- --fix",
     "start": "node bin/dev-server start",
     "test": "nightwatch",
-    "deploy:prod": "better-npm-run deploy:prod"
-  },
-  "betterScripts": {
-    "deploy:prod": {
-      "command": "npm run deploy",
-      "env": {
-        "NODE_ENV": "production",
-        "DEBUG": "app:*"
-      }
-    }
+    "prod": "NODE_ENV=production node bin/compile"
   },
   "repository": {
     "type": "git",
@@ -55,7 +44,6 @@
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
     "react-redux": "^5.0.1",
-    "react-router": "^3.0.0",
     "react-slick": "^0.14.11",
     "react-star-rating-component": "^1.2.4",
     "redux": "^3.6.0",
@@ -85,7 +73,6 @@
     "nightwatch": "^0.9.15",
     "nodemon": "^1.10.2",
     "react-addons-test-utils": "^15.0.0",
-    "redbox-react": "^1.2.10",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.2"
   }
