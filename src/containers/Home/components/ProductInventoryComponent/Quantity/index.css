@@ -1,0 +1,32 @@
+    .quantity-input {
+            display: block;
+            border:solid thin #eee;
+            width:25%;
+            font-size:12px;
+            padding:5px;
+            margin-top:15px;
+            margin-bottom: 15px;
+            height: 31px;
+        }
+        .quantity-input * {
+            display: inline-block;
+        }
+        .quantity-input .quantity {
+            padding: 5px;
+            text-align: center;
+            width: 25px;
+            float: right;
+        }
+        .quantity-input span {
+            float:right;
+	        height: 20px;
+	        -moz-border-radius: 10px;
+	        -webkit-border-radius: 10px;
+	        border-radius: 10px;
+            background: silver; 
+            padding: 4px;
+            width: 20px;
+            color:white;
+            text-align: center;
+            cursor: pointer;
+        }    

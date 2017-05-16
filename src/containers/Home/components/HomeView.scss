@@ -1,0 +1,38 @@
+.leftSide {
+  padding:10px;
+  width:35%;
+  float: left;
+}
+.rightSide{
+    padding: 10px;
+    padding-top: 40px;
+    width: 60%;
+    float: right;
+}
+.productContainer {
+  width:70%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.reviewContainer{
+    float: left;
+    width: 40%;
+    clear: both;
+    margin-top:15px;
+}
+
+@media screen and (max-width: 400px) {
+  .productContainer{
+    width:95%;
+  }
+  .leftSide {
+    float: none;
+    width: 100%;
+  }
+  .rightSide{
+    width: 100%;
+  }
+  .reviewContainer{
+       width: 100%;
+  }
+}
