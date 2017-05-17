@@ -1,6 +1,7 @@
 import React from 'react';
 import DetailReviews from './DetailReviews';
 import Rating from './Rating';
+import './index.css';
 
 const componentStyle={
 	rating:{
@@ -25,7 +26,7 @@ class Review extends React.PureComponent {
             <div>                
                 <div>
 					<div style={componentStyle.rating}>
-						<Rating editing={false} style={{fontSize:30, float:'left'}} rating={this.props.CustomerReview[0].consolidatedOverallRating} />
+						<Rating editing={false} className='overall-rating' rating={this.props.CustomerReview[0].consolidatedOverallRating} />
 						<span style={componentStyle.overall} >overall</span>
 					</div>
                 	<div style={componentStyle.viewall}>view all reviews</div>

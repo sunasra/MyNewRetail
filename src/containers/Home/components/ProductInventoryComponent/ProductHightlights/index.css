@@ -1,0 +1,13 @@
+div.product-highlights li{
+    color: grey;
+    font-weight:400;
+    font-size:14px;
+    line-height: 1.5;
+}
+div.product-highlights ul{
+    padding-left: 20px;
+}
+div.product-highlights strong{
+    font-weight:400;
+    font-size:14px;
+}

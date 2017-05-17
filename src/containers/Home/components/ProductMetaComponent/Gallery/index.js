@@ -3,7 +3,7 @@ import Slider from 'react-slick'
 
 const componentStyle = {
 	primaryImage : {
-		maxWidth:400,
+		maxWidth:'100%',
 		marginBottom:60
 	},
 	sliderContainer:{
@@ -47,8 +47,8 @@ class Gallery extends React.PureComponent{
 				<div style={componentStyle.sliderContainer}>
 					<Slider {...settings} >
 						{
-							this.props.images[0].AlternateImages.map((eachImage)=>{
-								return <img onClick={this.changePrimaryImage.bind(this)} style={componentStyle.eachImage} src={eachImage.image} />
+							this.props.images[0].AlternateImages.map((eachImage, index)=>{
+								return <img key={index} onClick={this.changePrimaryImage.bind(this)} style={componentStyle.eachImage} src={eachImage.image} />
 							})
 						}
 					</Slider>

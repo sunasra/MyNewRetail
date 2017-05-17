@@ -22,7 +22,6 @@ export function fetchFailed () {
 }
 
 export const getData = () => {
-	debugger;
 	return (dispatch, getState) => {
 		dispatch(fetchInit());
 		return fetch('/get-data')

@@ -3,7 +3,7 @@ import ProductTitle from './ProductTitle';
 import Gallery from './Gallery';
 
 
-class LeftComponent extends React.PureComponent {
+class ProductMetaComponent extends React.PureComponent {
 	constructor(props) {
 		super(props);
 	}
@@ -17,4 +17,4 @@ class LeftComponent extends React.PureComponent {
 	}
 }
 
-export default LeftComponent;
+export default ProductMetaComponent;

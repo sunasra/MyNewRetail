@@ -1,0 +1,30 @@
+.btn{
+        border-radius: 2px;
+		color: #ffffff;
+		font-size: 20px;
+        border:transparent;
+        width:48%;
+        padding-top:10px;
+        padding-bottom: 10px;
+        text-decoration: none
+}
+.pickupStore{
+        background: #8d8e99;
+		background-image: linear-gradient(to bottom, #8d8e99, #333);
+		
+}
+.addToCart{
+        background: #f71818;
+		background-image: linear-gradient(to bottom, #f71818, #c00);
+}
+
+
+@media screen and (max-width: 400px) {
+.pickupStore{
+        font-size: 14px;
+		
+}
+.addToCart{
+        font-size: 14px;
+    }
+}

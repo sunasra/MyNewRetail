@@ -4,7 +4,7 @@ import StarRatingComponent from 'react-star-rating-component';
 class Rating extends React.PureComponent{
 	render(){
 		return (
-            <div  style={this.props.style}>
+            <div className={this.props.className} style={this.props.style}>
                 <StarRatingComponent
                     name="rate1" 
                     starCount={5}

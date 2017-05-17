@@ -21,8 +21,8 @@ class Offers extends React.PureComponent{
 		return (
 			<div style={componentStyle.container}>
 			{
-				 this.props.Promotions.map(offer =>
-					<div style={componentStyle.eachPromo}>{offer.Description[0].shortDescription.toLowerCase()}</div>
+				 this.props.Promotions.map((offer, index) =>
+					<div key={index} style={componentStyle.eachPromo}>{offer.Description[0].shortDescription.toLowerCase()}</div>
 				)
 			}
             </div>

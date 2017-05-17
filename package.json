@@ -58,7 +58,6 @@
   "devDependencies": {
     "babel-eslint": "^7.1.0",
     "cheerio": "^0.22.0",
-    "chromedriver": "^2.29.0",
     "eslint": "^3.0.1",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-config-standard": "^6.0.0",

@@ -1,7 +1,7 @@
 import React from 'react';
 const componentStyles = {
 	title:{
-		fontSize:30,		
+		fontSize:28,		
 		fontWeight:300,
 		textAlign:'center'
 	}
