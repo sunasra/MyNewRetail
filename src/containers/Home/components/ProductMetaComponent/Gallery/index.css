@@ -1,0 +1,20 @@
+.slick-next:before, .slick-prev:before{
+    color:#2d2d2d;
+  }
+
+  .slider-container{
+      width: 280px;
+	 margin:0 auto;
+  }
+  .eachImage {
+      max-width : 93.3px
+  }
+
+  @media screen and (max-width: 400px) {
+  .slider-container{
+      width: 240px;
+  }
+  .eachImage {
+      max-width : 83.3px
+  }
+  } 

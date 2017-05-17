@@ -1,14 +1,11 @@
 import React from 'react';
 import Slider from 'react-slick'
+import './index.css'
 
 const componentStyle = {
 	primaryImage : {
 		maxWidth:'100%',
 		marginBottom:60
-	},
-	sliderContainer:{
-	 width: 280,
-	 margin:'0 auto'
 	},
 	galleryContainer:{
 		textAlign:'center',
@@ -18,9 +15,7 @@ const componentStyle = {
 		maxWidth:93.3
 	}
 }
-const NextArrow =(props) =>{
-	return <span {...props}>></span>
-}
+
 class Gallery extends React.PureComponent{
 	constructor(props){
 		super(props)
@@ -38,13 +33,12 @@ class Gallery extends React.PureComponent{
 			dots:false,
 			infinite: false,
 			slidesToShow:3,
-			slidesToScroll:1,
-			nextArrow: <NextArrow />
+			slidesToScroll:1
 		}
 		return (
             <div style={componentStyle.galleryContainer}>
                 <img src={this.state.currentPrimaryImage} style={componentStyle.primaryImage}/>
-				<div style={componentStyle.sliderContainer}>
+				<div className='slider-container'>
 					<Slider {...settings} >
 						{
 							this.props.images[0].AlternateImages.map((eachImage, index)=>{

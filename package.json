@@ -10,7 +10,8 @@
   "scripts": {
     "start": "node bin/dev-server start",
     "test": "nightwatch",
-    "prod": "NODE_ENV=production node bin/compile"
+    "prod": "NODE_ENV=production node bin/compile" ,
+    "//": "comment for prod command:- this will just compile the files, We can use pm2 server in post deploy script to up the server"
   },
   "repository": {
     "type": "git",
