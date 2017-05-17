@@ -50,34 +50,36 @@ const componentStyle = {
 	}
 };
 
+const Review = ({data}) =>{
+	return <div style={componentStyle.flex}>
+				<div><Rating editing={false} rating={data.overallRating}/></div>
+				<div style={componentStyle.title}>{data.title}</div>
+				<div style={componentStyle.detail}>{data.review}</div>
+				<div style={componentStyle.author}>
+					<a style={componentStyle.by} href='#'>{data.screenName}</a>
+					<span style={componentStyle.at}>{data.datePosted}</span>
+				</div>
+			</div>
+} 
+const Title = ({data, title}) => (
+	<div style={componentStyle.flex}>
+		<div style={componentStyle.head}>{title}</div>
+		<div style={componentStyle.mostHelpFul}>most helpful {data.overallRating} star review</div>
+	</div>
+);
+
 class DetailReviews extends React.PureComponent{
 	
 	render(){
 		return (
             <div style={componentStyle.container} >
 				<div style={{...componentStyle.displayFlex, ...componentStyle.border}}>
-					<div style={componentStyle.flex}>
-						<div style={componentStyle.head}>PRO</div>
-						<div style={componentStyle.mostHelpFul}>most helpful {this.props.CustomerReview[0].Pro[0].overallRating} star review</div>
-					</div>
-					<div style={componentStyle.flex}>
-						<div style={componentStyle.head}>CON</div>
-						<div style={componentStyle.mostHelpFul}>most helpful {this.props.CustomerReview[0].Con[0].overallRating} star review</div>
-					</div>
+					<Title data={this.props.CustomerReview[0].Pro[0]} />
+					<Title data={this.props.CustomerReview[0].Con[0]} />
 				</div>
 				<div style={{...componentStyle.displayFlex}}>
-					<div style={componentStyle.flex}>
-						<div><Rating editing={false} rating={this.props.CustomerReview[0].Pro[0].overallRating}/></div>
-						<div style={componentStyle.title}>{this.props.CustomerReview[0].Pro[0].title}</div>
-						<div style={componentStyle.detail}>{this.props.CustomerReview[0].Pro[0].review}</div>
-						<div style={componentStyle.author}><a style={componentStyle.by} href='#'>{this.props.CustomerReview[0].Pro[0].screenName}</a> <span style={componentStyle.at}>{this.props.CustomerReview[0].Pro[0].datePosted}</span></div>
-					</div>
-					<div style={componentStyle.flex}>
-						<div><Rating editing={false} rating={this.props.CustomerReview[0].Con[0].overallRating}/></div>
-						<div style={componentStyle.title}>{this.props.CustomerReview[0].Con[0].title}</div>
-						<div style={componentStyle.detail}>{this.props.CustomerReview[0].Con[0].review}</div>
-						<div style={componentStyle.author}><a style={componentStyle.by} href='#'>{this.props.CustomerReview[0].Con[0].screenName}</a> <span style={componentStyle.at}>{this.props.CustomerReview[0].Con[0].datePosted}</span></div>
-					</div>
+					<Review data={this.props.CustomerReview[0].Pro[0]}/>
+					<Review data={this.props.CustomerReview[0].Con[0]}/>
 				</div>
             </div>
 		);
