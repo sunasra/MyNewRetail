@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import configureStore from './store/createStore'
-import Home from './containers/Home/components/HomeView'
+import Home from './pages/Home/components/HomeView'
 
 const store = configureStore()
 

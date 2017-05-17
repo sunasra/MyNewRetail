@@ -10,9 +10,6 @@ const componentStyle = {
 	galleryContainer:{
 		textAlign:'center',
 		marginTop:40
-	},
-	eachImage:{
-		maxWidth:93.3
 	}
 }
 
@@ -42,7 +39,7 @@ class Gallery extends React.PureComponent{
 					<Slider {...settings} >
 						{
 							this.props.images[0].AlternateImages.map((eachImage, index)=>{
-								return <img key={index} onClick={this.changePrimaryImage.bind(this)} style={componentStyle.eachImage} src={eachImage.image} />
+								return <img key={index} onClick={this.changePrimaryImage.bind(this)} src={eachImage.image} />
 							})
 						}
 					</Slider>

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import productReducer from '../containers/Home/reducers'
+import productReducer from '../pages/Home/reducers'
 
 export const makeRootReducer = combineReducers({
 	productData:productReducer,

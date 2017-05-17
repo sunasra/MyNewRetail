@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './HomeView.scss';
+import styles from './HomeView.css';
 import ProductMetaComponent from './ProductMetaComponent';
 import ProductInventoryComponent from './ProductInventoryComponent';
 import ReviewComponent from './ReviewComponent'
