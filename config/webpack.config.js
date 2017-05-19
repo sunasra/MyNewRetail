@@ -3,6 +3,9 @@ const webpack = require('webpack');
 const cssnano = require('cssnano');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var AssetsPlugin = require('assets-webpack-plugin')
+var assetsPluginInstance = new AssetsPlugin()
+
 const project = require('./project.config');
 const debug = require('debug')('app:config:webpack');
 
@@ -45,17 +48,18 @@ webpackConfig.externals['react/addons'] = true;
 
 
 webpackConfig.plugins = [
-	new webpack.DefinePlugin(project.globals),
-	new HtmlWebpackPlugin({
-		template : project.paths.client('index.html'),
-		hash     : false,
-		favicon  : project.paths.public('favicon.ico'),
-		filename : 'index.html',
-		inject   : 'body',
-		minify   : {
-			collapseWhitespace : true
-		}
-	})
+	// new webpack.DefinePlugin(project.globals),
+	// 	new HtmlWebpackPlugin({
+	// 	template : project.paths.client('index.html'),
+	// 	hash     : false,
+	// 	favicon  : project.paths.public('favicon.ico'),
+	// 	filename : 'index.html',
+	// 	inject   : 'body',
+	// 	minify   : {
+	// 		collapseWhitespace : true
+	// 	}
+	// }),
+	assetsPluginInstance
 ];
 
 

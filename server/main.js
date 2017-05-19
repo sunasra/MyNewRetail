@@ -9,6 +9,12 @@ const fs = require('fs');
 
 const app = express();
 
+import React from 'react';
+import { Provider } from 'react-redux'
+import {renderToString} from 'react-dom/server';
+import Home from '../src/pages/Home/components/HomeView'
+import configureStore from '../src/store/createStore'
+
 // Apply gzip compression
 app.use(compress());
 
@@ -31,29 +37,80 @@ if (project.env === 'development') {
 
 	app.use(express.static(project.paths.public()));
 	app.get('/get-data', function(req, res){
-		fs.readFile('./server/items.json','utf-8', function(err, data){
-			if(err) throw err;
-			res.write(data);
+		fetchData('./server/items.json',function(err){
+			throw err;
+		}, function(response){
+			res.write(response);
 			res.end();
-		});
+		})
 	});
+	app.use(handleRender)
 
-	app.use('*', function (req, res, next) {
-		const filename = path.join(compiler.outputPath, 'index.html');
-		compiler.outputFileSystem.readFile(filename, (err, result) => {
-			if (err) {
-				return next(err);
-			}
-			res.set('content-type', 'text/html');
-			res.send(result);
-			res.end();
+	function fetchData(path,error, response){
+		fs.readFile(path,'utf-8', function(err, data){
+			if(err) error(err);
+			response(data);
 		});
-	});
+	}
+
+	function handleRender(req, res){
+		fetchData('./server/items.json',(err) => console.log(err), function (response){
+			const iniObj = {
+				productData:{
+					"fetchInit":false,
+					"fetchSuccess":true,
+					"fetchFailed":false,
+					"data":JSON.parse(response)
+				}
+			}
+			const store = configureStore(iniObj);
+			const html = renderToString(
+			<Provider store={store}>
+				<Home />
+			</Provider>
+			)
+			const finalState = store.getState();
+			renderPage(html,finalState,res);
+		})
+	}
+
+	function renderPage(html, state, res){
+		fetchData('./webpack-assets.json',function(err){
+			throw err;
+		}, function(response){
+				res.send(`
+		<!doctype html>
+			<html lang="en">
+			<head>
+			<title>My Retail</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" type="text/css" href="slick.min.css" />
+			<link rel="stylesheet" type="text/css" href="slick-theme.min.css" />
+			<link rel="stylesheet" type="text/css" href="style.css">
+			</head>
+			<body>
+			<div id="root" style="height: 100%">${html}</div>
+			 <script>
+          		window.__PRELOADED_STATE__ = ${JSON.stringify(state).replace(/</g, '\\x3c')}
+        	</script>
+			<script src="${JSON.parse(response).app.js}"></script>
+			<script src="${JSON.parse(response).app.js}"></script>
+			</body>
+		</html>
+		`)
+		})
+	}
 } else {
 	debug(
    'Production mode'
   );
-	app.use(express.static(project.paths.dist()));
+	//app.use(express.static(project.paths.dist()));
 }
+
+app.listen(project.server_port)
+debug(`Server is now running at http://localhost:${project.server_port}.`)
 
 module.exports = app;

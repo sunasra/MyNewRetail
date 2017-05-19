@@ -4,7 +4,8 @@ import { Provider } from 'react-redux'
 import configureStore from './store/createStore'
 import Home from './pages/Home/components/HomeView'
 
-const store = configureStore()
+const preloadedState = window.__PRELOADED_STATE__
+const store = configureStore(preloadedState)
 
 const MOUNT_NODE = document.getElementById('root')
   render(

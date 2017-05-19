@@ -1,7 +1,6 @@
 import React from 'react';
 import DetailReviews from './DetailReviews';
 import Rating from './Rating';
-import './index.css';
 
 const componentStyle={
 	rating:{

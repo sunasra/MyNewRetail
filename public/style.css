@@ -1,3 +1,166 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+.leftSide {
+  padding:10px;
+  width:35%;
+  float: left;
+}
+.rightSide{
+    padding: 10px;
+    padding-top: 40px;
+    width: 60%;
+    float: right;
+}
+.productContainer {
+  width:70%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.reviewContainer{
+    float: left;
+    width: 40%;
+    clear: both;
+    margin-top:15px;
+}
+
+.slick-next:before, .slick-prev:before{
+    color:#2d2d2d;
+  }
+
+  .slider-container{
+      width: 280px;
+	 margin:0 auto;
+  }
+  .eachImage {
+      max-width : 93.3px
+  }
+
+.btn{
+        border-radius: 2px;
+		color: #ffffff;
+		font-size: 20px;
+        border:transparent;
+        width:48%;
+        padding-top:10px;
+        padding-bottom: 10px;
+        text-decoration: none
+}
+.pickupStore{
+
+  background: #5f5f63;
+  background-image: -webkit-linear-gradient(#5f5f63, #000);
+  background-image: -moz-linear-gradient(#5f5f63, #000);
+  background-image: -o-linear-gradient(#5f5f63, #000);
+  background-image: linear-gradient(#5f5f63, #000);
+                
+}
+.addToCart{
+   background: #f71818;
+   background-image: -webkit-linear-gradient(#f71818, #c00); 
+   background-image: -moz-linear-gradient(#f71818, #c00);
+   background-image: -o-linear-gradient(#f71818, #c00);
+   background-image: linear-gradient(#f71818, #c00);
+}
+
+.greyBtn{
+    color: #2d2d2d;
+    background-color: #e2e2e2;
+    border: transparent;
+    padding: 5px;
+    margin-left: 5px;
+    width: 32%;
+}
+.quantity-input {
+            display: block;
+            border:solid thin #eee;
+            width:175px;
+            font-size:12px;
+            padding:5px;
+            margin-top:15px;
+            margin-bottom: 15px;
+            height: 22px;
+        }
+        .quantity-input * {
+            display: inline-block;
+        }
+        .quantity-input .quantity {
+            padding: 5px;
+            text-align: center;
+            width: 25px;
+            float: right;
+        }
+        .quantity-input span {
+            float:right;
+	        height: 15px;
+	        -moz-border-radius: 15px;
+	        -webkit-border-radius: 15px;
+	        border-radius: 15px;
+            background: silver; 
+            padding: 4px;
+            width: 15px;
+            color:white;
+            text-align: center;
+            line-height: 1.4;
+            cursor: pointer;
+}
+
+div.product-highlights li{
+    color: grey;
+    font-weight:400;
+    font-size:14px;
+    line-height: 1.5;
+}
+div.product-highlights ul{
+    padding-left: 20px;
+}
+div.product-highlights strong{
+    font-weight:400;
+    font-size:14px;
+}
+
+.overall-rating {
+    font-size:30px;
+     float:left;
+}
+
+
+
+@media screen and (max-width: 400px) {
+  .productContainer{
+    width:95%;
+  }
+  .leftSide {
+    float: none;
+    width: 100%;
+    padding-left: 0px;
+  }
+  .rightSide{
+    padding:0px;
+    width: 100%;
+  }
+  .reviewContainer{
+       width: 100%;
+  }
+  .slider-container{
+      width: 240px;
+  }
+  .eachImage {
+      max-width : 83.3px
+  }
+
+  .pickupStore{
+        font-size: 14px;
+		
+}
+.addToCart{
+        font-size: 14px;
+    }
+
+.overall-rating {
+    font-size:20px;
+}
+.greyBtn{
+    width:30%;
+}
+}

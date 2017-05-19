@@ -1,6 +1,5 @@
 import React from 'react';
 import Slider from 'react-slick'
-import './index.css'
 
 const componentStyle = {
 	primaryImage : {
@@ -25,6 +24,7 @@ class Gallery extends React.PureComponent{
 			currentPrimaryImage:this.props.images[0].AlternateImages[e.target.dataset.index].image
 		})
 	}
+	
 	render(){
 		const settings = {
 			dots:false,

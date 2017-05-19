@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css'
+
 class CTA extends React.PureComponent{
 	render(){
 		const className = this.props.type === 'addtocart' ? 'btn addToCart' : 'btn pickupStore';
